@@ -17,6 +17,7 @@
     <object>objects\obj_test_player</object>
     <object>objects\obj_globalvars</object>
     <object>objects\obj_solid</object>
+    <object>objects\obj_player</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_debug</room>

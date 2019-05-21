@@ -28,8 +28,8 @@
             <string>/// Player Vars
 // Player Horizontal Vars
 spd = 0;
-maxspd = 32;
-acceleration = 4;
+maxspd = 64;
+acceleration = 8;
 
 // Player Vertical Vars
 vspd = 0;
@@ -38,7 +38,10 @@ vacceleration = 8;
 
 // Bodge
 slidetimer = 0;
+slidetimer2 = 0;
 jumping = false;
+jumptimer = 0;
+maxjumptimer = room_speed/4;
 </string>
           </argument>
         </arguments>
@@ -69,6 +72,15 @@ if slidetimer &gt; 2 {
         slidetimer = 0;
     }
 };
+
+
+slidetimer2++;
+if slidetimer2 &gt; room_speed/10 {
+    if spd = 4 || (spd*(-1)) = -4 {
+        spd = 0;
+        slidetimer2 = 0;
+    }
+};
 </string>
           </argument>
         </arguments>
@@ -92,29 +104,43 @@ if slidetimer &gt; 2 {
           <argument>
             <kind>1</kind>
             <string>/// Vertical
-y+=vspd;
+    
+// Not exceed speed
+if vspd &gt; maxvspd {
+    vspd = maxvspd;
+};
 
-
-if keyboard_check_pressed(vk_space) {
-    jumping = true;
+if vspd &lt; (maxvspd*(-1)) {
+    vspd = (maxvspd*(-1));
 };
 
 // Falling
-if place_meeting(x,y, obj_solid) &amp;&amp; jumping = true {
-    if vspd &gt;= maxvspd {
-        jumping = false;
-    } else {    
-        vspd-=vacceleration;
-    }
+if (vspd &lt; maxvspd) vspd += vacceleration; 
+
+// Vertical Collission
+if (place_meeting(x,y+vspd,obj_solid))
+{
+while(!place_meeting(x,y+sign(vspd),obj_solid))
+{
+y += sign(vspd);
+}
+vspd = 0;
+}
+y+=vspd;
+
+// Jumping
+if (keyboard_check_pressed(vk_space)) &amp;&amp; (place_meeting(x+1,y,obj_solid)) || (keyboard_check_pressed(vk_space)) &amp;&amp; place_meeting(x-1,y,obj_solid)
+{
+    vspd -= vacceleration*2; 
 };
 
-if !place_meeting(x,y+32, obj_solid) &amp;&amp; jumping = false {
-    if vspd &lt; maxvspd {    
-        vspd+=vacceleration;
-    }
-} else {
-    grav = false;
-    vspd = 0;
+if jumping = true {
+    vspd-=vacceleration*4;
+    jumptimer++;    
+};
+
+if jumptimer &gt;= maxjumptimer {
+    jumping = false;
 };
 </string>
           </argument>
@@ -138,11 +164,16 @@ if !place_meeting(x,y+32, obj_solid) &amp;&amp; jumping = false {
             <kind>1</kind>
             <string>/// Horizontal
 // Add spd to X
-x+=spd;
 
-if place_meeting(x+1 || x-1,y, obj_solid) {
-    spd = 0;
+if (place_meeting(x+spd,y,obj_solid))
+{
+while(!place_meeting(x+sign(spd),y,obj_solid))
+{
+x += sign(spd);
 }
+spd = 0;
+}
+x+=spd;
 
 // Walking to the right
 if (keyboard_check(ord("D"))) {
@@ -161,29 +192,6 @@ if (keyboard_check(ord("A"))) {
 } else if (spd*(-1)) &gt; 0 {
         spd+=(acceleration*global.frict);
 };
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_solid">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Collision
 </string>
           </argument>
         </arguments>
