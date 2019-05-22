@@ -4,9 +4,16 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\mus_debug</sound>
+    <sounds name="Steps">
+      <sound>sound\snd_step_1</sound>
+      <sound>sound\snd_step_2</sound>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
-    <sprite>sprites\spr_test_player</sprite>
+    <sprite>sprites\spr_fiona_idle</sprite>
+    <sprite>sprites\spr_fiona_run</sprite>
     <sprite>sprites\spr_test_solid</sprite>
   </sprites>
   <backgrounds name="background">
@@ -14,10 +21,10 @@
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\obj_test_player</object>
+    <object>objects\obj_player</object>
     <object>objects\obj_globalvars</object>
     <object>objects\obj_solid</object>
-    <object>objects\obj_player</object>
+    <object>objects\obj_debug_mus</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_debug</room>
