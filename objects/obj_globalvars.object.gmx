@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>global.frict = 2;
 global.grav = 16;
+
+audio_sound_gain(snd_step_1, 0.5, 0);
+audio_sound_gain(snd_step_2, 0.5, 0);
 </string>
           </argument>
         </arguments>
