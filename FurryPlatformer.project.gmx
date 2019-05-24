@@ -18,19 +18,32 @@
       <sprite>sprites\spr_fiona_run</sprite>
       <sprite>sprites\spr_fiona_idle_run</sprite>
       <sprite>sprites\spr_fiona_run_idle</sprite>
+      <sprite>sprites\spr_fiona_jump</sprite>
+      <sprite>sprites\spr_fiona_idle_jump</sprite>
     </sprites>
+    <sprite>sprites\spr_desktop</sprite>
+    <sprite>sprites\spr_mobile</sprite>
+    <sprite>sprites\spr_mobile_right</sprite>
+    <sprite>sprites\spr_mobile_left</sprite>
+    <sprite>sprites\spr_mobile_jump</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_debug</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
+    <object>objects\oMeatBoy</object>
     <object>objects\obj_player</object>
     <object>objects\obj_globalvars</object>
     <object>objects\obj_solid</object>
-    <object>objects\obj_debug_mus</object>
+    <object>objects\obj_desktop</object>
+    <object>objects\obj_mobile</object>
+    <object>objects\obj_mobile_right</object>
+    <object>objects\obj_mobile_left</object>
+    <object>objects\obj_mobile_jump</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_mode</room>
     <room>rooms\rm_debug</room>
   </rooms>
   <help>
