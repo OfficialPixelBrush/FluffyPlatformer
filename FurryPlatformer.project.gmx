@@ -3,7 +3,10 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\PlayAPKExpansionExtension</extension>
+    <extension index="1">extensions\GooglePlayLicensingAsExt</extension>
+  </NewExtensions>
   <sounds name="sound">
     <sound>sound\mus_debug</sound>
     <sounds name="Steps">

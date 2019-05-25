@@ -59,11 +59,11 @@ global.mobile_left = 0;
           <argument>
             <kind>1</kind>
             <string>if global.mode = 1 {
-    instance_create(view_xview[0]+512, view_yview[0]+512, obj_mobile_right)
+    instance_create(x, y, obj_mobile_right)
+    instance_create(x, y, obj_mobile_left)
+    instance_create(x, y, obj_mobile_jump)
     global.mode = 64;
 };
-
-
 </string>
           </argument>
         </arguments>

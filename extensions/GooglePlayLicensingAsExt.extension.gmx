@@ -3,7 +3,7 @@
   <name>GooglePlayLicensingAsExt</name>
   <version>2.2.2</version>
   <packageID>com.yoyogames.googleplaylicensingextension</packageID>
-  <ProductID>ACBD3CFF4E539AD869A0E8E3B4B022DD</ProductID>
+  <ProductID></ProductID>
   <date>26/03/15</date>
   <license>Free to use, also for commercial games.</license>
   <description></description>
@@ -26,7 +26,7 @@ compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.
   <iosThirdPartyFrameworks/>
   <ConfigOptions>
     <Config name="Default">
-      <CopyToMask>834777342120174</CopyToMask>
+      <CopyToMask>743440586</CopyToMask>
     </Config>
   </ConfigOptions>
   <androidPermissions/>
