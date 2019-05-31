@@ -80,6 +80,26 @@ key_left = 0;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="2">
       <action>
@@ -238,7 +258,7 @@ spd = 0;
 x+=spd;
 
 // Footsteps
-if ((image_index = 3) &amp;&amp; (sprite_index = spr_fiona_run) &amp;&amp; vspd &lt; maxvspd/4 &amp;&amp; jumping = false) {
+if ((image_index = 4) &amp;&amp; (sprite_index = spr_fiona_run) &amp;&amp; vspd &lt; maxvspd/4 &amp;&amp; jumping = false) {
     if step_side = 0 {
         step_side = 1;
         audio_play_sound(snd_step_1, 1, false);

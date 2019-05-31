@@ -67,7 +67,7 @@ y = view_yview[0]+view_hview[0]-512;
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>obj_mobile_left</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>

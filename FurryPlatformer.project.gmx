@@ -44,6 +44,7 @@
     <object>objects\obj_mobile_right</object>
     <object>objects\obj_mobile_left</object>
     <object>objects\obj_mobile_jump</object>
+    <object>objects\obj_mouse</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_mode</room>
