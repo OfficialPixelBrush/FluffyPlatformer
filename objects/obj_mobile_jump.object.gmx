@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>/// Put in right position
-x = view_xview[0]+512;
-y = view_yview[0]+view_hview[0]-512;
+x = view_xview[0]-view_xview[0]/10;
+y = view_yview[0]+view_yview[0]-view_yview[0]/10;
 </string>
           </argument>
         </arguments>
